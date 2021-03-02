@@ -1,0 +1,8 @@
+Package: build-rules
+Version: 1.0-1
+Section: base
+Priority: optional
+Architecture: all
+Depends: make (>=4.2.1)
+Maintainer: Matei Busui <matei@busui.ro>
+Description: General build rules using makefiles

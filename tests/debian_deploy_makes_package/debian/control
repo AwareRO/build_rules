@@ -1,0 +1,8 @@
+Package: debian-deploy-makes-package-test
+Version: 1.0-1
+Section: base
+Priority: optional
+Architecture: all
+Depends: make (>=4.2.1)
+Maintainer: Matei Busui <matei@busui.ro>
+Description: Unit Test for a make file providing deploy-debian rule
