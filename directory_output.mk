@@ -5,5 +5,5 @@
 build: $(BUILD_DIR)
 include build_rules/interfaces/build.mk
 $(BUILD_DIR):
-	@[ -d $(BUILD_DIR) ] || mkdir $(BUILD_DIR)
+	@[ -d $(BUILD_DIR) ] || mkdir -p $(BUILD_DIR)
 include build_rules/interfaces/clean.mk
