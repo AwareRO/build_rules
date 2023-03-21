@@ -1,2 +1,10 @@
+BUILD_DIR?=dist
 .PHONY:build
-build: $(BUILD_DEPS) $(BUILD)
+build: $(BUILD_DIR)/$(BUILD_PREFIX) $(BUILD)
+
+$(BUILD_DIR)/$(BUILD_PREFIX): $(BUILD_DIR)
+
+$(BUILD_DIR)/$(BUILD_PREFIX) $(BUILD_DIR):
+	@mkdir -p $@
+
+$(BUILD): $(DEPS)

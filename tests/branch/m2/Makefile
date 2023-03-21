@@ -1,0 +1,1 @@
+../mock_module.mk

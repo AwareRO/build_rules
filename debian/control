@@ -3,6 +3,6 @@ Version: 1.0-1
 Section: base
 Priority: optional
 Architecture: all
-Depends: make (>=4.2.1)
+Depends: make (>=4.3-4.1), bash (>=5.1-2)
 Maintainer: Matei Busui <matei@busui.ro>
-Description: General build rules using makefiles
+Description: Collection of useful makefiles
