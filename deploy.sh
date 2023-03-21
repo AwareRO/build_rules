@@ -11,9 +11,9 @@ build() {
 }
 
 report() {
-	local tmp="aceveri -- \`${V}\`"
+	local tmp="build-rules -- \`${V}\`"
 	echo "qqq -> '${tmp}'" >>$LOG
-	script-buildozer.sh "${tmp}" aceveri
+	script-buildozer.sh "${tmp}"
 }
 
 #### Builder dependencies
