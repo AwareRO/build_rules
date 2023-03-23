@@ -9,7 +9,7 @@ DEBIAN_DEPS=$(wildcard $(DEBIAN_DIR)/*)
 	@dpkg-deb --build $<
 
 $(DEBIAN_TARGET): $(DEBIAN_TARGET)/DEBIAN
-	@cp -Rv $(BUILD_DIR)/* $@
+	@[ -z "$(ls self)" ] || cp -Rv $(BUILD_DIR)/* $@
 	@touch $@
 
 $(DEBIAN_TARGET)/DEBIAN: $(DEBIAN_DEPS)
