@@ -1,4 +1,5 @@
 **UNDER CONSTRUCTION**
+
 **hic sunt dracones**
 
 ---
@@ -13,19 +14,32 @@ so I can notify you when I introduce breaking changes.
 
 
 < BUILD
+
 < BUILD_DEPS
+
 < CLEAN_TARGETS
+
 < TESTS
+
 < DOCS
-> build
-> clean
-> tests
-> docs
+
+\> build
+
+\> clean
+
+\> tests
+
+\> docs
 
 
 TODOs
+
 ModuleIdeas
-	< name
-	< version
-	> install-deps
-	> help
+
+	\< name
+
+	\< version
+	
+	\> install-deps
+	
+	\> help
