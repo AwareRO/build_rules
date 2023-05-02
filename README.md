@@ -36,10 +36,7 @@ TODOs
 
 ModuleIdeas
 
-	\< name
-
-	\< version
-	
-	\> install-deps
-	
-	\> help
+	< name
+	< version
+	> install-deps
+	> help
