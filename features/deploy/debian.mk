@@ -14,6 +14,6 @@ $(DEBIAN_TARGET): $(DEBIAN_TARGET)/DEBIAN
 
 $(DEBIAN_TARGET)/DEBIAN: $(DEBIAN_DEPS)
 	@[ -e $@ ] || mkdir -pv $@
-	@sed -i 's/Version: .*/Version: '"$(VERSION)"'/' $(DEBIAN_DIR)/control
 	@cp -Rv $? $@
+	@sed -i 's/Version: .*/Version: '"$(VERSION)"'/' $(DEBIAN_TARGET)/DEBIAN/control
 	@sed -i 's/_PACKAGE_NAME_/'"$(PACKAGE_NAME)"'/' $(DEBIAN_TARGET)/DEBIAN/control
