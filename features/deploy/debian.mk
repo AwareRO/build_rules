@@ -1,6 +1,8 @@
 PACKAGE_NAME?=$(shell awk '/Package: /{print $$2}' debian/control)
+VERSION?=$(shell ./genver.sh)
 DEBIAN_TARGET=$(PACKAGE_NAME)_$(VERSION)
 DEBIAN_DIR?=debian
+CLEAN_TARGETS+=$(DEBIAN_TARGET) $(DEBIAN_TARGET).deb
 
 .PHONY: deploy-debian
 deploy-debian: $(DEBIAN_TARGET).deb
