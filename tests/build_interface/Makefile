@@ -1,5 +1,5 @@
 include build_rules/interfaces/build_rules_unit_test.mk
-BUILD=dist/out
+OUT=out
 DEPS=dep1 dep2 dep3
 include build_rules/interfaces/build.mk
 

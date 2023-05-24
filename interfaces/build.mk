@@ -1,4 +1,5 @@
 BUILD_DIR?=dist
+BUILD?=$(BUILD_DIR)/$(BUILD_PREFIX)/$(OUT)
 .PHONY:build
 build: $(BUILD_DIR)/$(BUILD_PREFIX) $(BUILD)
 
