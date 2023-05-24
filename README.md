@@ -11,7 +11,7 @@ depend on this project, email me about it at busui.matei1994@gmail.com
 so I can notify you when I introduce breaking changes.
 
 
-`Run *make all-tests* if you're worried about backwards compatibility`
+Run `make all-tests` if you're worried about backwards compatibility
 
 
 < BUILD
