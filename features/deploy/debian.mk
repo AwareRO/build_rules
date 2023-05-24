@@ -1,3 +1,4 @@
+PACKAGE_NAME?=$(shell awk '/Package: /{print $$2}' debian/control)
 DEBIAN_TARGET=$(PACKAGE_NAME)_$(VERSION)
 DEBIAN_DIR?=debian
 

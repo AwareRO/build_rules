@@ -1,5 +1,4 @@
 include build_rules/interfaces/build_rules_unit_test.mk
-PACKAGE_NAME=debian-deploy-unit-test
 VERSION=1.0-1
 include build_rules/features/deploy/debian.mk
 BUILD=test
