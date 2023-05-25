@@ -6,7 +6,7 @@ include build_rules/interfaces/build.mk
 $(BUILD):
 	cat $(DEPS) >> $@
 
-all-tests: build-test build-once-test
+all-tests: build-test build-once-test pre-build-test
 
 .PHONY:build-test
 build-test:
@@ -20,3 +20,10 @@ build-once-test:
 	@$(MAKE) build >/dev/null 2>/dev/null
 	@wc -l $(BUILD) | grep -q "3" || (echo "Run the build command multiple times"; return 1)
 	@rm -r $(BUILD_DIR)
+
+.PHONY:pre-build-test
+pre-build-test:
+	@$(MAKE) build 2>&1 | grep -q "pre"
+
+pre-build:
+	@echo pre
