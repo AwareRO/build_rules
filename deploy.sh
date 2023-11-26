@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DEPLOY_REMOTE="matei@172.104.241.195"
-REMOTE_PATH="/var/www/html/aware.ro/deb/debian"
+DEPLOY_REMOTE="builder@deb.aware.ro"
+REMOTE_PATH="/var/www/html/aware.ro/deb/prod/debian/pool/testing"
 REMOTE_PORT=31444
 
 build() {
@@ -14,6 +14,10 @@ report() {
 	local tmp="build-rules -- \`${V}\`"
 	echo "qqq -> '${tmp}'" >>$LOG
 	script-buildozer.sh "${tmp}"
+}
+
+deploy() {
+	deploy_to_package_repo_v2 "$DEPLOY_TARGETS" "$DEPLOY_REMOTE" "$REMOTE_PATH" "$REMOTE_PORT"
 }
 
 #### Builder dependencies
