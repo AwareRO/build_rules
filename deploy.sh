@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DEPLOY_REMOTE="builder@deb.aware.ro"
-REMOTE_PATH="/var/www/html/aware.ro/deb/prod/debian/pool/testing"
+REMOTE_PATH="/var/www/html/aware.ro/deb/debian/pool/testing"
 REMOTE_PORT=31444
 
 build() {

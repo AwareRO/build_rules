@@ -29,7 +29,7 @@ ver_v2() {
 
 ver_v3() {
 	curl -u 'build-rules-repo:HX{EMB),'"'"'!:d-_bN4q' \
-		https://prod.deb.aware.ro/debian/dists/dev/main/binary-all/Packages.gz |\
+		https://deb.aware.ro/debian/dists/dev/main/binary-all/Packages.gz |\
 		gunzip | awk '/^Package:/ {p=0} /^Package: build-rules$/ {printf $2; p=1} /^Version:/ {if(p){print " "$2}}' |\
 		tail -n 1 | awk '{print $2}' | inc_patch
 }
