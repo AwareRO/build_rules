@@ -1,0 +1,28 @@
+name: Build template
+run-name: ${{ gitea.actor }} pushed to ${{ gitea.repository }} at ${{ gitea.branch }}.
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  Build-Plan:
+    runs-on: debian12-aware
+    container:
+      image: code.aware.ro/edward/awarebuild:latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Build
+        run: cd ${{ gitea.workspace }}; make
+      - name: Notify
+        run: cd ${{ gitea.workspace }}; script-buildozer.sh "build_rules -- $(ls build-rules_*.deb |  tr '\n' ' ')"
+        shell: bash
+      - name: Deploy
+        run: |
+          cd ${{ gitea.workspace }}; source deploy.sh; \
+            deb_file=$(ls build-rules_*.deb); \
+            echo "Deploying $deb_file to $DEPLOY_REMOTE:$REMOTE_PORT:$REMOTE_PATH"; \
+            scp -P $REMOTE_PORT $deb_file "${DEPLOY_REMOTE}:${REMOTE_PATH}"; \
+            ssh -p $REMOTE_PORT $DEPLOY_REMOTE "GNUPGHOME=~/pgpkeys-MJgW3W aware-update-packages.sh dev"
+        shell: bash
