@@ -14,4 +14,4 @@ build-clean-test:
 	@[ -f $(BUILD) ] || (echo "Failed to build"; return 1)
 	@$(MAKE) build >/dev/null 2>/dev/null
 	@$(MAKE) clean >/dev/null 2>/dev/null
-	@[ ! -d dist ] || (echo "Failed to clean"; return 1)
+	@[ ! -d $(BUILD_DIR) ] || (echo "Failed to clean"; return 1)
