@@ -1,6 +1,7 @@
 PACKAGE_NAME?=$(shell awk '/Package: /{print $$2}' debian/control)
+PACKAGE_ARCH?=$(shell awk '/Architecture: /{print $$2}' debian/control)
 VERSION?=$(shell ./genver.sh)
-DEBIAN_TARGET=$(PACKAGE_NAME)_$(VERSION)
+DEBIAN_TARGET=$(PACKAGE_NAME)_$(VERSION)_$(PACKAGE_ARCH)
 DEBIAN_DIR?=debian
 CLEAN_TARGETS+=$(DEBIAN_TARGET) $(DEBIAN_TARGET).deb
 
