@@ -9,7 +9,7 @@ deploy-debian: $(DEBIAN_TARGET).deb
 
 DEBIAN_DEPS=$(wildcard $(DEBIAN_DIR)/*)
 %.deb: %
-	@dpkg-deb --build $<
+	@dpkg-deb --build $< .
 
 $(DEBIAN_TARGET): $(DEBIAN_TARGET)/DEBIAN
 	@[ -z "`ls $(BUILD_DIR)`" ] || cp -Rv $(BUILD_DIR)/* $@
